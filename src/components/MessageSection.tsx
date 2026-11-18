@@ -26,16 +26,13 @@ export default function MessageSection({
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left column: Layered stationery letter */}
           <div className="lg:col-span-7 relative">
-            {/* Subtle offset parchment sheet behind the main letter */}
-            <div
+          <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 rounded-2xl bg-[#ffd9ea] border border-pink-300/70 -rotate-1 translate-x-1.5 translate-y-2 shadow-sm"
             />
 
             <article className="relative rounded-2xl border border-pink-300/85 bg-[#fff9fc] p-6 sm:p-10 shadow-[0_24px_60px_rgba(157,23,77,0.14)]">
-              {/* Subtle pink washi tape detail */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -top-3.5 left-1/2 -translate-x-1/2 h-7 w-28 rotate-2 rounded-xs bg-pink-400/65 shadow-xs"
@@ -82,8 +79,7 @@ export default function MessageSection({
                   </div>
                 )}
               </div>
-
-              {/* Surprise modal trigger unlocked after revealing secret letter */}
+              
               {isRevealed && (
                 <div className="mt-7 pt-5 border-t border-pink-200/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <p className="font-ui text-xs sm:text-sm text-[#7c2d50]">
@@ -101,11 +97,10 @@ export default function MessageSection({
               )}
             </article>
           </div>
-
-          {/* Right column: Framed keepsake portrait with photo corner accents */}
+    
           <div className="lg:col-span-5 flex justify-center">
             <figure className="animate-gentle-float relative w-full max-w-xs sm:max-w-sm rounded-xl border border-pink-300/85 bg-[#fff9fc] p-3.5 pb-6 shadow-[0_22px_50px_rgba(157,23,77,0.16)] rotate-[1.5deg]">
-              {/* Photo corner accents */}
+
               <span aria-hidden="true" className="pointer-events-none absolute top-2 left-2 z-10 h-5 w-5 border-t-2 border-l-2 border-pink-400/75" />
               <span aria-hidden="true" className="pointer-events-none absolute top-2 right-2 z-10 h-5 w-5 border-t-2 border-r-2 border-pink-400/75" />
 
