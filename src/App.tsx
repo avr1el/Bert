@@ -67,8 +67,6 @@ export default function App() {
     }
   }, [attemptPlayAudio]);
 
-  // Play Magnolia immediately when the website opens, with automatic first-gesture fallback
-  // if browser autoplay policy initially blocks unmuted playback.
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
