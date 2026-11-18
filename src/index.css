@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'PinkyCupid';
+  src: url('/fonts/Pinky Cupid.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MilkChoco';
+  src: url('/fonts/Milk Choco.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-pink-canvas: #fff0f6;
+  --bg-pink-blush: #ffd6e8;
+  --surface-paper: #fff9fc;
+  --ink-primary: #4a102b;
+  --ink-muted: #7c2d50;
+  --accent-pink: #db2777;
+  --accent-pink-deep: #9d174d;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--ink-primary);
+  background-color: var(--bg-pink-canvas);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-pink-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display-cupid {
+  font-family: 'PinkyCupid', 'Lora', Georgia, serif;
+}
+
+.font-handwriting {
+  font-family: 'MilkChoco', 'Lora', Georgia, serif;
+}
+
+.font-letter-serif {
+  font-family: 'Lora', Georgia, serif;
+}
+
+.font-ui {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Subtle stationery dot-paper texture */
+.pink-paper-dots {
+  background-image: radial-gradient(rgba(190, 24, 93, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* GPU-composited Marquee backdrop motion */
+@keyframes marqueeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeScroll 44s linear infinite;
+}
+
+.marquee-track-fast {
+  animation-duration: 32s;
+  animation-direction: reverse;
+}
+
+.marquee-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Subtle float animation for keepsake portrait */
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+.animate-gentle-float {
+  will-change: transform;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* GPU-composited tactile Polaroid hover (animates transform + pseudo-element opacity, zero box-shadow repaint) */
+.polaroid-card {
+  position: relative;
+  transform: rotate(var(--tilt, 0deg)) translate3d(0, 0, 0);
+  box-shadow: 0 12px 26px rgba(74, 16, 43, 0.24);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.polaroid-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 26px 52px rgba(244, 114, 182, 0.42), 0 12px 24px rgba(59, 7, 30, 0.3);
+  opacity: 0;
+  transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.polaroid-card:hover,
+.polaroid-card:focus-visible {
+  transform: rotate(calc(var(--tilt, 0deg) * -0.4)) translate3d(0, -10px, 0) scale(1.05);
+  z-index: 10;
+}
+
+.polaroid-card:hover::after,
+.polaroid-card:focus-visible::after {
+  opacity: 1;
+}
+
+.polaroid-card:active {
+  transform: rotate(calc(var(--tilt, 0deg) * -0.2)) translate3d(0, -3px, 0) scale(0.985);
+}
+
+/* 3D Polaroid flip utilities */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Subtle pink stationery paper rule pattern */
+.stationery-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(219, 39, 119, 0.08) 31px,
+    rgba(219, 39, 119, 0.08) 32px
+  );
+}
+
+/* Custom thin scrollbar inside letter & flip card back */
+.keepsake-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.keepsake-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.keepsake-scroll::-webkit-scrollbar-thumb {
+  background: rgba(219, 39, 119, 0.28);
+  border-radius: 9999px;
+}
+
+/* GPU-composited upward drifting pink hearts */
+@keyframes floatHeartUp {
+  0% {
+    transform: translate3d(0, 108vh, 0) rotate(var(--heart-rot, 0deg)) scale(0.85);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--heart-opacity, 0.32);
+  }
+  50% {
+    transform: translate3d(var(--drift-x, 18px), 48vh, 0) rotate(calc(var(--heart-rot, 0deg) + 10deg)) scale(1);
+  }
+  88% {
+    opacity: var(--heart-opacity, 0.32);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift-x, 18px) * -0.5), -14vh, 0) rotate(calc(var(--heart-rot, 0deg) - 8deg)) scale(0.92);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  will-change: transform, opacity;
+  animation: floatHeartUp var(--duration, 16s) linear var(--delay, 0s) infinite;
+}
+
+.hearts-paused .floating-heart {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .marquee-track-fast,
+  .animate-gentle-float,
+  .floating-heart {
+    animation: none !important;
+  }
+  .floating-heart {
+    display: none;
+  }
+  .polaroid-card,
+  .polaroid-card:hover,
+  .polaroid-card:focus-visible,
+  .polaroid-card:active,
+  .polaroid-card::after {
+    transition: none;
+    transform: rotate(var(--tilt, 0deg));
+  }
+}
