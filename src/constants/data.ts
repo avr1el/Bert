@@ -46,8 +46,8 @@ export const POLAROID_DATA: PolaroidMemory[] = [
     indexLabel: "01",
     src: "/foto/kenangan1.jpg",
     caption: "Simple But Ours",
-    subtitle: "Inazuma Night",
-    personalCaption: "Inazuma Night · a quiet moment I still keep close",
+    subtitle: "Genshin impact",
+    personalCaption: "Genshin Impact · a quiet moment I still keep close",
     rotationDeg: -3.5,
     message:
       "kangen waktu itu… i think that was the first time we played together (?) atau yang di inazuma, di hutan itu… aku lupa namanya jier. ya... buat orang lain mungkin itu hal biasa, tapi buat aku, ini sesuatu yang enggak bakal aku lupain... oh iya, kalau kamu inget waktu itu aku pernah edit foto ini, yang kayak bulan ‘jealous’ gara-gara liat kita berdua wkwk... i don’t know if you still remember it or not… tapi aku bener-bener seneng banget waktu ituu!",
