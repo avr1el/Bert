@@ -63,7 +63,7 @@ body {
   background-size: 22px 22px;
 }
 
-/* GPU-composited Marquee backdrop motion */
+
 @keyframes marqueeScroll {
   0% {
     transform: translate3d(0, 0, 0);
@@ -90,7 +90,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Subtle float animation for keepsake portrait */
+
 @keyframes gentleFloat {
   0%,
   100% {
@@ -106,7 +106,6 @@ body {
   animation: gentleFloat 6s ease-in-out infinite;
 }
 
-/* GPU-composited tactile Polaroid hover (animates transform + pseudo-element opacity, zero box-shadow repaint) */
 .polaroid-card {
   position: relative;
   transform: rotate(var(--tilt, 0deg)) translate3d(0, 0, 0);
@@ -141,7 +140,6 @@ body {
   transform: rotate(calc(var(--tilt, 0deg) * -0.2)) translate3d(0, -3px, 0) scale(0.985);
 }
 
-/* 3D Polaroid flip utilities */
 .perspective-1200 {
   perspective: 1200px;
 }
@@ -159,7 +157,7 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Subtle pink stationery paper rule pattern */
+
 .stationery-lines {
   background-image: repeating-linear-gradient(
     to bottom,
@@ -170,7 +168,6 @@ body {
   );
 }
 
-/* Custom thin scrollbar inside letter & flip card back */
 .keepsake-scroll::-webkit-scrollbar {
   width: 5px;
 }
@@ -184,7 +181,6 @@ body {
   border-radius: 9999px;
 }
 
-/* GPU-composited upward drifting pink hearts */
 @keyframes floatHeartUp {
   0% {
     transform: translate3d(0, 108vh, 0) rotate(var(--heart-rot, 0deg)) scale(0.85);
