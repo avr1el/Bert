@@ -45,7 +45,7 @@ export default function HeroSection({
         isModalOpen ? 'marquee-paused' : ''
       }`}
     >
-      {/* Angled dual-track memory marquee backdrop */}
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-6 opacity-50 -rotate-3 scale-115"
@@ -72,7 +72,6 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* Light translucent sakura blush veil */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,240,246,0.34)_0%,rgba(255,214,232,0.58)_68%,rgba(251,207,232,0.78)_100%)]"
@@ -82,10 +81,9 @@ export default function HeroSection({
         className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#fbcfe8] to-transparent"
       />
 
-      {/* Main editorial keepsake layout */}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 lg:py-14">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
-          {/* Left column: Greeting & headline */}
+          
           <div className="lg:col-span-4 text-center lg:text-left order-2 lg:order-1">
             <div className="inline-block rounded-2xl bg-[#fff5f9]/75 px-5 py-4 border border-pink-300/60 shadow-[0_12px_32px_rgba(157,23,77,0.08)]">
               <p className="text-sm font-semibold text-[#9d174d] mb-2">
@@ -100,8 +98,7 @@ export default function HeroSection({
             </div>
           </div>
 
-          {/* Center column: Taped double-matte portrait print */}
-          <div className="lg:col-span-4 flex justify-center order-1 lg:order-2">
+            <div className="lg:col-span-4 flex justify-center order-1 lg:order-2">
             <div className="animate-gentle-float relative w-60 sm:w-72 lg:w-80">
               <div
                 aria-hidden="true"
@@ -127,8 +124,7 @@ export default function HeroSection({
               </div>
             </div>
           </div>
-
-          {/* Right column: Postage-framed age, subtle countdown, & scroll CTA */}
+          
           <div className="lg:col-span-4 flex flex-col items-center lg:items-end text-center lg:text-right order-3">
             <div className="relative inline-flex flex-col items-center lg:items-end rounded-2xl border border-dashed border-pink-400/70 bg-[#fff5f9]/80 px-6 py-4 shadow-[0_12px_32px_rgba(190,24,93,0.1)]">
               <span
