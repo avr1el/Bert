@@ -34,7 +34,7 @@ function drawFourPointStar(
   ctx.closePath();
   ctx.fill();
 
-  // Soft white-pink highlight core for subtle sparkle glints
+
   ctx.fillStyle = '#fff5f9';
   ctx.globalAlpha = alpha * 0.75;
   ctx.beginPath();
