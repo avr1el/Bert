@@ -84,7 +84,7 @@ export default function PolaroidModal({
           className="fixed inset-0 z-50 flex flex-col bg-[radial-gradient(circle_at_top,rgba(131,24,67,0.96)_0%,rgba(65,6,29,0.98)_100%)] text-[#fff9fc]"
           onClick={onClose}
         >
-          {/* Compact single-row modal header bar */}
+          
           <div
             className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 py-2.5 border-b border-pink-200/15 shrink-0"
             onClick={(e) => e.stopPropagation()}
@@ -131,8 +131,7 @@ export default function PolaroidModal({
             </div>
           </div>
 
-          {/* Centered Polaroid container (mirrors original centered flex-wrap layout) */}
-          <div
+           <div
             className="flex-1 overflow-y-auto px-4 sm:px-8 py-5 flex flex-col"
             onClick={onClose}
           >
@@ -168,13 +167,13 @@ export default function PolaroidModal({
                           style={{ '--tilt': `${item.rotationDeg}deg` } as CSSProperties}
                           className="polaroid-card group relative flex w-[152px] sm:w-[215px] flex-col bg-[#fffaf8] p-2.5 sm:p-3 pb-4 sm:pb-5 rounded-sm border border-pink-200/75 text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-300"
                         >
-                          {/* Subtle translucent pink washi tape at top */}
+                          
                           <span
                             aria-hidden="true"
                             className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 h-4 w-12 sm:h-5 sm:w-16 rounded-xs bg-pink-300/75 shadow-xs"
                           />
 
-                          {/* Lightweight gradient well + uncropped foreground photo */}
+                          
                           <div className="relative aspect-square w-full overflow-hidden rounded-xs bg-[radial-gradient(circle_at_center,#591231_0%,#2b0515_100%)] shadow-inner">
                             <ResilientImage
                               src={item.src}
@@ -205,7 +204,7 @@ export default function PolaroidModal({
                     transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
                     className="flex flex-col items-center w-full max-w-md"
                   >
-                    {/* Directional slide wrapper when stepping Prev / Next */}
+                    
                     <AnimatePresence mode="wait" initial={false}>
                       <motion.div
                         key={activeMemory!.id}
@@ -230,7 +229,7 @@ export default function PolaroidModal({
                         transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
                         className="w-full flex justify-center"
                       >
-                        {/* 3D Flip Card */}
+                        
                         <button
                           type="button"
                           onClick={() => setIsFlipped((prev) => !prev)}
@@ -247,7 +246,7 @@ export default function PolaroidModal({
                               isFlipped ? 'rotate-y-180' : 'group-hover:-translate-y-1'
                             }`}
                           >
-                            {/* Front: Polaroid photo */}
+                            
                             <div className="backface-hidden absolute inset-0 flex flex-col rounded-xl bg-[#fffaf8] p-3.5 pb-4 shadow-[0_22px_50px_rgba(0,0,0,0.42)] border border-pink-200/75">
                               <div className="relative flex-1 min-h-0 w-full overflow-hidden rounded-md bg-[radial-gradient(circle_at_center,#591231_0%,#2b0515_100%)] shadow-inner">
                                 <ResilientImage
@@ -274,7 +273,7 @@ export default function PolaroidModal({
                               </div>
                             </div>
 
-                            {/* Back: Heartfelt story note */}
+                            
                             <div className="backface-hidden rotate-y-180 absolute inset-0 flex flex-col rounded-xl bg-[#fffaf8] stationery-lines p-6 shadow-[0_22px_50px_rgba(0,0,0,0.42)] border border-pink-200/75 text-[#4a102b]">
                               <div className="border-b border-pink-200/80 pb-3 mb-3 flex items-center justify-between gap-2">
                                 <div>
@@ -305,7 +304,7 @@ export default function PolaroidModal({
                       </motion.div>
                     </AnimatePresence>
 
-                    {/* Navigation controls below flip card */}
+                    
                     <div className="mt-6 flex items-center justify-center gap-3">
                       <button
                         type="button"
